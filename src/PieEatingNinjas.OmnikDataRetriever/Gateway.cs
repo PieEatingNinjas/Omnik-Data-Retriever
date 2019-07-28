@@ -1,7 +1,8 @@
-﻿using System;
+﻿using PieEatingNinjas.OmnikDataRetriever.Extensions;
+using System;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
-using System.Web;
 
 namespace PieEatingNinjas.OmnikDataRetriever
 {
@@ -20,13 +21,12 @@ namespace PieEatingNinjas.OmnikDataRetriever
         }
 
         public Task<ApiResponse<UserData>> Login(string username, string passwd)
-        {
-            username = HttpUtility.UrlEncode(username);
-            passwd = HttpUtility.UrlEncode(passwd);
-            string url = GetFullUrl(string.Format(Constants.API_USER_ACCOUNT_VALIDATE_URL, username, passwd));
-
-            return client.PostAsync(url, null).AsApiResponse<UserData>();
-        }
+            => client.PostAsync(
+                GetFullUrl(Constants.API_USER_ACCOUNT_VALIDATE_URL, 
+                    WebUtility.UrlEncode(username), 
+                    WebUtility.UrlEncode(passwd))
+                , null)
+            .AsApiResponse<UserData>();
 
         public Task<ApiResponse<PlantList>> GetPlantList()
             => EnsureUserDataSet(
@@ -37,7 +37,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
         public Task<ApiResponse<PlantData>> GetPlantData(int plantId)
             => EnsureUserDataSet(
                 () => client.GetAsync(
-                    GetFullUrl(string.Format(Constants.API_PLANT_DATA_URL, plantId)))
+                    GetFullUrl(Constants.API_PLANT_DATA_URL, plantId))
                 .AsApiResponse<PlantData>());
 
         private Task<ApiResponse<T>> EnsureUserDataSet<T>(Func<Task<ApiResponse<T>>> func)
@@ -65,19 +65,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
             }
         }
 
-        private string GetFullUrl(string suffix)
-           => $"{Constants.API_BASE_URL.TrimEnd('/')}/{suffix.TrimStart('/')}";
-    }
-
-    internal static class ClientExtensions
-    {
-        internal static async Task<ApiResponse<T>> AsApiResponse<T>(this Task<HttpResponseMessage> task)
-        {
-            var response = await task;
-
-            var json = await response.Content.ReadAsStringAsync();
-
-            return Newtonsoft.Json.JsonConvert.DeserializeObject<ApiResponse<T>>(json);
-        }
+        private string GetFullUrl(string suffix, params object[] args)
+           => $"{Constants.API_BASE_URL.TrimEnd('/')}/{string.Format(suffix.TrimStart('/'), args)}";
     }
 }
