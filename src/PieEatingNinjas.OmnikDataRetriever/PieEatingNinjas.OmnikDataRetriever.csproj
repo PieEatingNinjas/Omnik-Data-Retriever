@@ -11,6 +11,9 @@
     <RepositoryUrl>https://github.com/PieEatingNinjas/Omnik-Data-Retriever</RepositoryUrl>
     <Version>0.0.1</Version>
     <PackageTags></PackageTags>
+    <PackageIconUrl>https://blog.pieeatingninjas.be/wp-content/uploads/2019/07/Picture2-128.png</PackageIconUrl>
+    <PackageReleaseNotes>Initial version.
+Use Omnik Portal credentials to log in.</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
