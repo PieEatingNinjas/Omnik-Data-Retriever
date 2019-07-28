@@ -47,7 +47,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
         [JsonProperty("current_power")]
         public float CurrentPower { get; set; }
         [JsonProperty("today_energy")]
-        public int TodayEnergy { get; set; }
+        public float TodayEnergy { get; set; }
         [JsonProperty("status")]
         public int Status { get; set; }
     }
