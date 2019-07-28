@@ -2,6 +2,15 @@
 
   <PropertyGroup>
     <TargetFramework>netstandard1.1</TargetFramework>
+    <GeneratePackageOnBuild>false</GeneratePackageOnBuild>
+    <Authors>Pieter Nijs</Authors>
+    <Company>Bull-IT Consultancy</Company>
+    <Product>OmnikDataRetriever</Product>
+    <Description>Unofficial API to retrieve data from your Omnik inverter.</Description>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <RepositoryUrl>https://github.com/PieEatingNinjas/Omnik-Data-Retriever</RepositoryUrl>
+    <Version>0.0.1</Version>
+    <PackageTags></PackageTags>
   </PropertyGroup>
 
   <ItemGroup>
