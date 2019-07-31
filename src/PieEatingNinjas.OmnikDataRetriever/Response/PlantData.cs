@@ -15,7 +15,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
         public string Timezone { get; set; }
         [JsonProperty("currency")]
         public string Currency { get; set; }
-        [JsonProperty("today_energy")]
+        [JsonProperty("today_energy")]  
         public float TodayEnergy { get; set; }
         [JsonProperty("monthly_energy")]
         public float MonthlyEnergy { get; set; }
