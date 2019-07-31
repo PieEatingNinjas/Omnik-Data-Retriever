@@ -6,7 +6,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
     public class PlantData
     {
         [JsonProperty("total_energy")]
-        public string TotalEnergy { get; set; }
+        public float TotalEnergy { get; set; }
         [JsonProperty("last_update_time")]
         public DateTime LastUpdateTime { get; set; }
         [JsonProperty("peak_power_actual")]

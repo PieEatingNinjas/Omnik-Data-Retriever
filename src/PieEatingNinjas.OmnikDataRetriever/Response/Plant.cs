@@ -5,7 +5,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
     public class Plant
     {
         [JsonProperty("total_energy")]
-        public string TotalEnergy { get; set; }
+        public float TotalEnergy { get; set; }
         [JsonProperty("plant_id")]
         public int PlantId { get; set; }
         [JsonProperty("country")]
@@ -31,7 +31,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("eday")]
-        public string Eday { get; set; }
+        public float Eday { get; set; }
         [JsonProperty("currency")]
         public string Currency { get; set; }
         [JsonProperty("create_date")]
