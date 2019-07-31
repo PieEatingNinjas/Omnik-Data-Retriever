@@ -31,7 +31,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
         [JsonProperty("name")]
         public string Name { get; set; }
         [JsonProperty("eday")]
-        public float Eday { get; set; }
+        public float? Eday { get; set; }
         [JsonProperty("currency")]
         public string Currency { get; set; }
         [JsonProperty("create_date")]

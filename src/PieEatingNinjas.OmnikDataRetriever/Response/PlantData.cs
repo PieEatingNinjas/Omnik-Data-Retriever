@@ -10,7 +10,7 @@ namespace PieEatingNinjas.OmnikDataRetriever
         [JsonProperty("last_update_time")]
         public DateTime LastUpdateTime { get; set; }
         [JsonProperty("peak_power_actual")]
-        public double PeakPowerActual { get; set; }
+        public float PeakPowerActual { get; set; }
         [JsonProperty("timezone")]
         public string Timezone { get; set; }
         [JsonProperty("currency")]

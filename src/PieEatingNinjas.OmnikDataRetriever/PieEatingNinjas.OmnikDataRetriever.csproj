@@ -9,11 +9,12 @@
     <Description>Unofficial API to retrieve data from your Omnik inverter.</Description>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
     <RepositoryUrl>https://github.com/PieEatingNinjas/Omnik-Data-Retriever</RepositoryUrl>
-    <Version>1.0.1</Version>
+    <Version>1.0.2</Version>
     <PackageTags></PackageTags>
     <PackageIconUrl>https://blog.pieeatingninjas.be/wp-content/uploads/2019/07/Picture2-128.png</PackageIconUrl>
-    <PackageReleaseNotes>1.0.1 release
-Downgraded Newtonsoft.Json version for better compatibility</PackageReleaseNotes>
+    <PackageReleaseNotes>1.0.2 release
+
+Updated data types</PackageReleaseNotes>
   </PropertyGroup>
 
   <ItemGroup>
